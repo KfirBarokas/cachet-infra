@@ -18,5 +18,15 @@ spec:
       - name: php
         image: localhost:5001/cachet-php:1.0.0
         ports:
-        - containerPort: 80
-
+        - containerPort: 8000
+        env:
+        - name: DB_CONNECTION
+          value: "mysql"
+        - name: DB_HOST
+          value: "db" #need db service name
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_DATABASE
+          value: "laravel"
+        - name: DB_USERNAME
+          value: "root"
